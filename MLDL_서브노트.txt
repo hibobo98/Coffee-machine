@@ -1,0 +1,549 @@
+
+ * 모든 서브노트는 바탕체 글꼴로 작성했습니다
+
+================================
+ 과목 개요
+================================
+
+# 학습 내용
+
+  - Machine Learning, scikit-learn, ...
+  - Deep Learning, Keras, ...
+
+
+# 수업자료
+
+  http://naver.me/xKWNKUc3 (비밀번호 : 1128)
+
+
+# 목차 
+
+  - Required Prerequisite 
+  - 데이터 분석 개요  
+  - 환경 설정 
+  - Dataset Loading 
+  - scikit-learn 이해 
+  - Data Preprocessing 
+  - Regression 
+  - Classification 
+  - Clustring
+  - Artificial Neural Network : Perceptron, ...
+  - ...
+
+
+# 교재
+
+  - 머신러닝을 이용한 데이터 분석
+    http://www.yes24.com/Product/Goods/103529127
+
+  - 케라스 창시자에게 배우는 딥러닝 개정 2판
+    http://www.yes24.com/Product/Goods/112012471
+
+  - ...
+
+
+===================
+ 용어 정리
+===================
+
+# Program?
+
+  해야 할 일을 미리 기술해 놓은 것
+ 
+  인간의 언어
+
+  프로그래밍 언어 : C, C++, Java, Python, R, ..., SQL, ...
+
+  기계어
+
+
+# 생각?
+
+
+# Machine Learning?
+
+
+============================
+ Required Prerequisite
+============================
+
+  - Python Language : https://www.python.org 
+
+    -> OOP 이해 : https://schoolofweb.net/blog/posts/category/프로그래밍/파이썬/파이썬-중급-강좌/
+
+  - Flask : Flask_서브노트.txt 
+
+  - crawling : Crawling Fundamentals.txt, Crawling and Flask.txt
+
+  - NumPy : https://numpy.org
+
+    -> Analog and Digital
+       https://www.mathsisfun.com/data/analog-digital.html
+
+    -> Understanding Data Types in Python
+       https://jakevdp.github.io/PythonDataScienceHandbook/02.01-understanding-data-types.html
+
+  - pandas : https://pandas.pydata.org
+
+    -> Introducing Pandas Objects
+       https://jakevdp.github.io/PythonDataScienceHandbook/03.01-introducing-pandas-objects.html
+
+    -> Options and settings
+       https://runebook.dev/ko/docs/pandas/user_guide/options
+
+  - matplotlib : https://matplotlib.org
+
+  - seaborn : https://seaborn.pydata.org
+
+  - EDA(Exploratory Data Analysis) : EDA_서브노트.txt 
+
+  - [에러 처리] DLL load failed while importing _arpack 에러
+
+    https://yanoo.tistory.com/15
+
+    conda remove --force numpy, scipy
+
+    pip install numpy
+    pip install scipy
+
+
+============================
+ 데이터 분석 개요
+============================
+
+# DIKW 이해
+
+  - DIKW pyramid
+
+    https://www.sedaily.com/NewsVIew/1OB16XQ807
+
+  - DIKW model with machines learning platforms
+
+    https://bit.ly/2OFPzRT
+ 
+    -> Real Intelligence vs Artificial Intelligence(..., ML(..., DL)) -> AI + Body = Robot -> Internet of Things
+
+       - 생각? AI를 만든다?
+       - Data + AI 
+
+         자료, 자산, 미래예측지표, 경험, ...
+
+
+# 용어
+
+  Digital vs Analog
+
+  https://www.mathsisfun.com/data/analog-digital.html
+
+
+# 데이터 분석(Data Analysis)
+
+  - Datum vs Data
+  - 분석 : 나눌 分 + 쪼갤 析
+
+    -> 데이터 마이닝(Data Mining)
+    -> 데이터 과학(Data Science)
+
+  - 차원(dimension), 특성(feature), 변수(variable), 열(column), 속성(attribute), ...
+
+
+# Data Analysis Level
+
+  - Developer Level 분석 -> Statistics 기반 분석 -> Machine Learning 기반 분석 
+
+
+# 데이터 분석 유형
+
+  https://hackersstudy.tistory.com/122
+
+  - 탐색적 데이터 분석(EDA) : Exploratory  Data Analysis ≒ 통계학 + Alpha
+  - 확증적 데이터 분석(CDA) : Confirmatory Data Analysis ≒ 통계학
+  - 실용적 데이터 분석(PDA) : Practical    Data Analysis
+  - ...
+
+
+# 데이터 엔지니어 vs 데이터 사이언티스트 vs 데이터 분석가 
+
+  - https://bit.ly/3fJgMiC
+  - http://naver.me/GBINA6qj
+  - https://paulsmooth.tistory.com/142
+
+
+# 데이터 분석으로 성과가 있으려면
+
+  - CEO에서 신입사원에 이르기까지 데이터 분석을 중시하는 조직 문화 
+  - SQL, R, Python 등 프로그래밍에 능숙하고 Statistics, ML/DL을 꾸준히 학습한 구성원 
+  - 예산, 장비, 시간 등의 리소스 
+  - ...
+
+
+# 상황에 따른 데이터 분석 목표 
+
+                              분석대상(What)
+
+                          known          unknown
+                     ------------------------------
+  분석방법  known   |  optimization  |  insight    |
+  (How)             |------------------------------
+            unknown |  solution      |  discovery  |
+                     ------------------------------
+
+  -> optimization
+  -> solution 
+  -> insight
+  -> discovery
+
+
+# Machine Learning 기반 데이터 분석
+
+  - Machine Learning is:
+
+    - the process of training a piece of software, called a model, to make useful predictions using a data set
+    - algorithms that parse data, learn from that data, and then apply what they've learned to make informed decisions
+    - methods ...
+    - ...
+
+      -> Top Data Science and Machine Learning Methods Used in 2018, 2019
+         https://www.kdnuggets.com/2019/04/top-data-science-machine-learning-methods-2018-2019.html
+
+         State of Data Science and Machine Learning 2020: 3 Key Findings
+         https://www.kdnuggets.com/2020/12/kaggle-survey-2020-data-science-machine-learning.html
+
+  - History of Machine Learning 
+
+    https://erogol.com/brief-history-machine-learning/
+
+  - Machine Learning can't solve everything
+
+    https://analyticsindiamag.com/ml-cant-solve-everything-here-are-5-challenges-that-it-still-faces/
+
+  - When and When Not to Use Deep Learning
+
+    https://blog.dataiku.com/when-and-when-not-to-use-deep-learning
+
+
+# Machine Learning 알고리즘 분류
+
+  - An Introduction to Data Mining
+
+    http://www.saedsayad.com
+
+  - How to choose algorithms for Microsoft Azure Machine Learning
+
+    https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-choice/
+
+  - Choosing the right estimator
+
+    http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+
+  - A Tour of Machine Learning Algorithms
+
+    http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
+
+
+# Machine Learning 알고리즘 활용
+
+  (1) 직접 프로그래밍 수행
+
+      - Python + 패키지
+
+        -> statsmodels     : https://www.statsmodels.org/
+        -> scikit-learn    : https://scikit-learn.org
+        -> tensorflow      : https://www.tensorflow.org
+        -> keras           : https://keras.io
+
+           ** Keras comes packaged with TensorFlow 2.0 as tensorflow.keras. 
+              To start using Keras, simply install TensorFlow 2.0.
+
+           ** Software suites containing a variety of machine learning algorithms
+     
+              https://en.wikipedia.org/wiki/Machine_learning#Software
+
+        -> flask           : https://flask.palletsprojects.com/en/1.1.x/
+
+      - R      + 패키지
+      - Java   + 패키지
+      - ...
+
+
+  (2) 비쥬얼 툴 활용
+
+      - RapidMiner : https://rapidminer.com/
+      - Tableau : https://www.tableau.com/ko-kr
+      - Weka    : https://www.cs.waikato.ac.nz/ml/weka/   
+      - Orange  : http://orange.biolab.si
+      - Disco   : https://fluxicon.com/disco
+      - Rattle  : https://rattle.togaware.com/, http://me2.do/x5jliubo
+      - ...
+
+
+  (3) 제공되는 서비스 활용
+
+      - Google    : https://cloud.google.com/products/ai
+      - Microsoft : https://azure.microsoft.com/ko-kr/services/machine-learning/
+      - Amazon    : https://aws.amazon.com/ko/machine-learning/
+      - IBM       : https://www.ibm.com/watson/
+      - 네이버    : https://www.ncloud.com/product/aiService
+      - 카카오    : https://kakao.ai/
+      - ...
+
+
+# Machine Learning 기반 분석 수행 과정
+
+  [1] Machine Learning Problem Framing
+
+    https://developers.google.com/machine-learning/problem-framing?hl=ko
+
+    - ML/DL을 사용하지 않아도 되는 문제
+
+      -> Developer Level 분석 -> Statistics 기반 분석
+
+    - Classification is
+    
+      -> Identifying which category an object belongs to
+      -> Applications: Spam detection, image recognition, ...
+
+    - Regression
+
+      -> Predicting a continuous-valued attribute associated with an object
+      -> Applications: Drug response, Stock prices, ...
+
+    - Clustering
+
+      -> Automatic grouping of similar objects into sets
+      -> Applications: Customer segmentation, Grouping experiment outcomes, ...
+
+  [2] 정의된 문제에 따라 적절한 Machine Learning method 적용
+
+    - how to load in your data
+    - how to preprocess it
+    - how to create your own model to which you can fit your data and predict target labels
+    - how to validate your model 
+    - how to tune it further to improve its performance
+
+
+# StatQuest
+
+  - StatQuest 소개 
+
+    https://statquest.org/video-index/
+
+  - A Gentle Introduction to Machine Learning  -> https://www.youtube.com/watch?v=Gv9_4yMHFhI
+  - Bias and Variance  -> https://www.youtube.com/watch?v=EuBBz3bI-aA
+  - Cross Validation   -> https://www.youtube.com/watch?v=fSytzGwwBVw
+  - ...
+
+
+============================
+ 환경 설정
+============================
+
+# 개요
+
+  - Anaconda : IDLE, Notepad, Jupyter Notebook, ... 
+  - Tools    : Atom, VSCode, PyCharm, ...
+  - Cloud    : Colab, Sage Maker, ...
+
+  -> MLaaS, AIaaS, ...
+  -> 클라우드 기반 Application 예제들
+  
+
+# 환경 설정이 잘 안될 때 시도해 볼 것
+
+  0. 기존 파이썬, 아나콘다 삭제
+  1. 최신 아나콘다 다운로드
+  2. 설치할 때 Just Me 방식 선택
+  3. 설치할 때 권장 경로에 설치
+  4. pip install tensorflow
+
+
+============================
+ Dataset Loading 
+============================
+
+  - dataset_loading_서브노트.txt
+
+
+============================
+ scikit-learn 이해
+============================
+
+  - scikit-learn_서브노트.txt
+
+
+============================
+ Data Preprocessing
+============================
+
+# 데이터 전처리
+
+  - https://velog.io/@gurumagineer/06.-데이터-전처리
+  - https://velog.io/@kimdukbae/데이터-전처리-이론-및-실습1
+  - https://m.blog.naver.com/asus1984/120088161483
+
+
+# 레이블 인코딩(Label Encoding), 원-핫 인코딩(One-Hot Encoding)
+
+  https://94ung.tistory.com/38
+
+  -> 범주형 데이터의 다양한 인코딩(Encoding)
+  
+     https://conanmoon.medium.com/데이터과학-유망주의-매일-글쓰기-일곱번째-일요일-7a40e7de39d4
+
+
+# 표준화(Standardization), 정규화(Normalization)
+
+  - https://soo-jjeong.tistory.com/123
+  - https://cutt.ly/XYjCuI1 : 데이터의 다양한 표준화 방법
+
+
+# PCA (Principal component analysis, 주성분 분석)
+
+  - PCA.txt
+
+
+============================
+ Regression 
+============================
+
+# 대표적인 알고리즘
+
+  - Least Square -> Least Squares.txt -> Regularization.txt 
+
+    - Ridge 
+    - Lasso
+    - Elastic Net
+
+  - Logistic Regression -> Logistic Regression.txt
+
+
+# 평가 방법
+
+  https://bkshin.tistory.com/entry/머신러닝-17-회귀-평가-지표
+  https://partrita.github.io/posts/regression-error/
+
+  - MAE  = 평균편차
+  - MSE  = 분산
+  - RMSE = 표준편차 : scikit-learn은 지원하지 않으므로 np.sqrt(MSE) 해야 함
+  - R^2
+
+  ** Performance? 성능? 수행(능력)!
+
+     -> Work  Performance 
+     -> Model Performance 
+
+
+============================
+ Classification
+============================
+
+# 대표적인 알고리즘
+
+  - KNN                     -> KNN.txt
+  - Support Vector Machine  -> Support Vector Machine.txt
+  - Decesion Tree           -> Decision tree.txt
+  - Random Forest           -> Ensemble.txt 
+
+
+# 평가 방법
+
+  https://subinium.github.io/basic-of-Evaluation/
+
+  - 정확도(Accuracy) 
+  - 오차 행렬(Confusion Matrix)
+  - 정밀도(Precision)
+  - 재현율(Recall)
+  - F1 Score
+  - ROC Curve
+  - AUC
+
+  -> 분류평가예제.txt 
+
+
+# Deploying Machine Learning Models using Flask
+
+  - https://www.geeksforgeeks.org/deploy-machine-learning-model-using-flask/
+
+    -> https://archive.ics.uci.edu/ml/datasets/adult
+    -> https://github.com/hoshangk/machine_learning_model_using_flask_web_framework
+
+  - https://www.datacamp.com/community/tutorials/machine-learning-models-api-python
+  - https://www.section.io/engineering-education/deploying-machine-learning-models-using-flask/
+  - ...
+
+
+============================
+ Clustring
+============================
+
+# 대표적인 알고리즘
+
+  - Clustering 개요
+
+    -> https://rfriend.tistory.com/198
+
+       cf.연관규칙분석 : https://rfriend.tistory.com/191
+
+          -> 연관규칙분석이 비지도학습이라면 scikit-learn에 왜 estimator가 없을까?
+
+  - A comparison of the clustering algorithms in scikit-learn
+
+    https://scikit-learn.org/stable/modules/clustering.html#clustering
+
+    - K-means                   -> K-Means.txt
+    - Mean Shift                -> https://ariz1623.tistory.com/225
+    - Hierarchical Clustering   -> Hierarchical clustering.txt
+    - Spectral Clustering       -> Spectral Clustering.txt
+    - DBSCAN                    -> DBSCAN.txt
+    - t-SNE                     -> t-SNE.txt
+
+
+# 평가 방법
+
+  - Clustering performance evaluation
+
+    https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+
+    - Adjusted Rand index
+    - Mutual Information based scores
+    - Homogeneity, completeness and V-measure
+    - Fowlkes-Mallows scores
+    - Silhouette Coefficient
+    - Calinski-Harabasz Index
+    - Davies-Bouldin Index
+    - Contingency Matrix
+
+  - Silhouette Coefficient
+
+    - https://ratsgo.github.io/machine%20learning/2017/04/16/clustering/
+    - https://blog.naver.com/samsjang/221017639342
+    - https://en.wikipedia.org/wiki/Silhouette_(clustering)#/media/File:Silhouette-plot-orange.png
+    - https://ariz1623.tistory.com/224
+
+  - 군집분석(Cluster Analysis) 방법과 성능평가
+
+    https://blog.naver.com/jinty/221719520925
+     
+  - 클러스터링을 평가하는 척도 - Rand Index 
+
+    https://taeguu.tistory.com/52
+
+  - 클러스터링을 평가하는 척도 - Mutual Information
+
+    https://dodonam.tistory.com/81
+
+  - Clustering Evaluation and assessment
+
+    https://gentlej90.tistory.com/64
+
+
+====================================
+ Artificial Neural Network
+====================================
+
+  - 인공신경망_서브노트.txt
+
+
+
+
+
